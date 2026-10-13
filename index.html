@@ -37,18 +37,55 @@
             font-size: 14px;
             margin-bottom: 25px;
         }
+        /* Contenedor principal del QR con diseño centrado para albergar el logo */
         .qr-box {
             background-color: #ffffff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             display: inline-block;
             margin-bottom: 25px;
+            position: relative;
         }
-        .qr-box img {
+        .qr-wrapper {
+            position: relative;
             width: 250px;
             height: 250px;
+        }
+        .qr-wrapper img {
+            width: 100%;
+            height: 100%;
             display: block;
             object-fit: contain;
+        }
+        /* Logo central flotante imitando el diseño de tu imagen de referencia */
+        .qr-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55px;
+            height: 55px;
+            background-color: #000000;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            padding: 4px;
+            box-sizing: border-box;
+        }
+        .qr-logo span {
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 9px;
+            text-align: center;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+        .qr-logo span .green {
+            color: #22c55e;
         }
         .btn {
             display: inline-block;
@@ -97,13 +134,20 @@
         <p>Escanea el código QR o haz clic en el botón para acceder a la descarga de <strong>Stella TV</strong>.</p>
         
         <div class="qr-box">
-            <!-- Imagen del código QR exacta provista -->
-            <img src="qr_panaxtreaming.png" alt="Código QR Panaxtreaming Stella TV">
+            <div class="qr-wrapper">
+                <!-- Código QR apuntando a https://panaxtreaming.com/llegaste-al-lugar-correcto/ -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://panaxtreaming.com/llegaste-al-lugar-correcto/" alt="Código QR Panaxtreaming">
+                
+                <!-- Insignia del logo central -->
+                <div class="qr-logo">
+                    <span>Pana<span class="green">X</span>treaming</span>
+                </div>
+            </div>
         </div>
 
         <br>
         
-        <a href="https://panaxtreaming.com/centro-de-descargas-descarga-stella-tv/" class="btn" target="_blank">
+        <a href="https://panaxtreaming.com/llegaste-al-lugar-correcto/" class="btn" target="_blank">
             Ir a Descargar Stella TV
         </a>
 
